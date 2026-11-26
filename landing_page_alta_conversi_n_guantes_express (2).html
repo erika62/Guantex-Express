@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guantes Express | Tu aliado en insumos médicos en Santa Cruz</title>
+  <meta name="description" content="Guantes Express: Calidad, Seguridad y Confianza. Guantes de nitrilo (6 colores), látex, barbijos, gorros, cubrecalzados, jeringas y campos dentales con envío a domicilio dentro del Sexto anillo en Santa Cruz.">
+  
+  <!-- SEO ESTRUCTURADO JSON-LD (LOCAL BUSINESS) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Guantes Express",
+    "slogan": "Tu aliado en insumos médicos",
+    "description": "Distribución y venta de guantes de látex, guantes de nitrilo en variedad de colores, barbijos, jeringas, campos dentales, gorros quirúrgicos y cubrecalzados. Envío a domicilio dentro del Sexto anillo.",
+    "telephone": "+59175003785",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Santa Cruz de la Sierra",
+      "addressCountry": "BO"
+    },
+    "areaServed": "Santa Cruz de la Sierra (Dentro del Sexto anillo), Bolivia"
+  }
+  </script>
+
+  <style>
+    /* 1. RESET Y VARIABLES GLOBALES (TOKENS CSS) */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      /* Tríada Cromática sincronizada con la identidad de Portada Guantes Express (WCAG AA) */
+      --primary: #6d28d9;
+      --primary-dark: #3b0764;
+      --accent: #0d9488;
+      --accent-hover: #0f766e;
+      --bg: #faf8ff;
+      --surface: #ffffff;
+      --surface-alt: #f3e8ff;
+      --text: #1e1b4b;
+      --text-muted: #4c1d95;
+      --text-body: #334155;
+      --border: #e9d5ff;
+      
+      /* Tipografía y Espaciado Fluido (Matemática clamp) */
+      --font-h1: clamp(1.85rem, 2.1vw + 1.3rem, 3.15rem);
+      --font-h2: clamp(1.5rem, 1.3vw + 1.15rem, 2.35rem);
+      --font-h3: clamp(1.15rem, 0.5vw + 1rem, 1.35rem);
+      --font-body: clamp(1rem, 0.25vw + 0.95rem, 1.125rem);
+      --space-section: clamp(2.75rem, 5vw + 1.5rem, 5.5rem);
+      --gutter: clamp(1rem, 2.5vw + 0.5rem, 2rem);
+      
+      /* Elevaciones y Transiciones */
+      --shadow-sm: 0 1px 3px rgba(59, 7, 100, 0.08);
+      --shadow-md: 0 4px 6px -1px rgba(59, 7, 100, 0.1), 0 2px 4px -2px rgba(59, 7, 100, 0.06);
+      --shadow-lg: 0 14px 28px -6px rgba(109, 40, 217, 0.16);
+      --transition: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: var(--font-body);
+      line-height: 1.6;
+      color: var(--text-body);
+      background-color: var(--bg);
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* 2. TIPOGRAFÍA Y JERARQUÍA */
+    h1, h2, h3 {
+      line-height: 1.18;
+      font-weight: 800;
+      color: var(--primary-dark);
+      letter-spacing: -0.02em;
+    }
+    h1 { font-size: var(--font-h1); }
+    h2 { font-size: var(--font-h2); }
+    h3 { font-size: var(--font-h3); font-weight: 700; }
+
+    p {
+      color: var(--text-body);
+    }
+
+    /* 3. LAYOUTS FLUIDOS E INTRÍNSECOS */
+    .container {
+      width: min(100% - (var(--gutter) * 2), 1180px);
+      margin-inline: auto;
+    }
+
+    section {
+      padding-block: var(--space-section);
+    }
+
+    .section-header {
+      max-width: 700px;
+      margin-inline: auto;
+      text-align: center;
+      margin-block-end: clamp(2rem, 4vw, 3.25rem);
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary);
+      background-color: var(--surface-alt);
+      padding: 0.35rem 0.95rem;
+      border-radius: 999px;
+      margin-block-end: 0.85rem;
+    }
+
+    /* 4. HEADER MINIMALISTA DE CONVERSIÓN */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-block-end: 1px solid var(--border);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 76px;
+      gap: 1rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--primary-dark);
+      font-weight: 800;
+      font-size: 1.2rem;
+      line-height: 1.1;
+    }
+
+    .logo-sub {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    /* 5. BOTONES ACCESIBLES (>= 44x44px) */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      min-height: 48px;
+      min-width: 48px;
+      padding: 0.8rem 1.55rem;
+      border-radius: 0.65rem;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: transform var(--transition), background-color var(--transition), box-shadow var(--transition);
+    }
+
+    .btn:focus-visible, button:focus-visible, a:focus-visible, select:focus-visible, input:focus-visible {
+      outline: 3px solid var(--primary);
+      outline-offset: 3px;
+    }
+
+    .btn-accent {
+      background-color: var(--accent);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(13, 148, 136, 0.28);
+    }
+
+    .btn-accent:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(109, 40, 217, 0.25);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    /* 6. PORTADA PROTAGONISTA (HERO CON BANNER OFICIAL) */
+    .hero-cover {
+      padding-block: clamp(1.5rem, 3vw, 2.75rem) clamp(2.5rem, 4.5vw, 4rem);
+      background: linear-gradient(180deg, #ede9fe 0%, var(--bg) 100%);
+      border-block-end: 1px solid var(--border);
+    }
+
+    .cover-wrapper {
+      background: var(--surface);
+      border: 2px solid #ddd6fe;
+      border-radius: 1.25rem;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .cover-image-frame {
+      position: relative;
+      width: 100%;
+      background: linear-gradient(135deg, #f3e8ff 0%, #e0f2fe 100%);
+    }
+
+    .cover-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    /* Respaldo visual elegante si la imagen aún no está en la carpeta */
+    .cover-fallback {
+      display: none;
+      padding: clamp(2rem, 5vw, 3.5rem);
+      text-align: center;
+      background: linear-gradient(135deg, #ede9fe 0%, #ffffff 50%, #e0f2fe 100%);
+    }
+
+    .cover-action-bar {
+      background: var(--surface);
+      padding: clamp(1.25rem, 2.5vw, 1.85rem);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+      border-block-start: 1px solid var(--border);
+    }
+
+    .cover-copy h1 {
+      font-size: clamp(1.35rem, 1.5vw + 1rem, 2.05rem);
+      margin-block-end: 0.3rem;
+    }
+
+    .cover-copy p {
+      font-size: 0.98rem;
+      color: var(--text-body);
+    }
+
+    .cover-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+    }
+
+    /* 7. BARRA DE VALIDACIÓN Y GARANTÍAS */
+    .trust-bar {
+      background: var(--surface);
+      border-block-end: 1px solid var(--border);
+      padding-block: 1.5rem;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+      gap: 1.25rem;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--primary-dark);
+    }
+
+    .trust-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 0.6rem;
+      background: var(--surface-alt);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    /* 8. MATRIZ DE PRODUCTOS Y SELECTOR DE COLORES NITRILO */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+      gap: var(--gutter);
+    }
+
+    .card-container {
+      container-type: inline-size;
+      container-name: product-card;
+    }
+
+    .product-card {
+      height: 100%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 1.65rem;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.25rem;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .product-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-block-end: 0.75rem;
+    }
+
+    .product-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 0.75rem;
+      background: var(--surface-alt);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .badge-stock {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: var(--surface-alt);
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+    }
+
+    /* Selector de Colores Interactivo para Guantes de Nitrilo */
+    .swatch-group {
+      margin-block-start: 1rem;
+    }
+
+    .swatch-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-block-end: 0.5rem;
+    }
+
+    .swatches {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .swatch-btn {
+      min-width: 44px;
+      min-height: 44px;
+      padding: 0.3rem 0.65rem;
+      border-radius: 0.5rem;
+      border: 2px solid var(--border);
+      background: var(--surface);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+
+    .swatch-btn:hover {
+      border-color: var(--primary);
+    }
+
+    .swatch-btn.selected {
+      border-color: var(--primary);
+      background: var(--surface-alt);
+      box-shadow: 0 0 0 1px var(--primary);
+    }
+
+    .color-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 1px solid rgba(59, 7, 100, 0.25);
+      flex-shrink: 0;
+    }
+
+    .product-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 46px;
+      padding: 0.65rem 1rem;
+      border-radius: 0.55rem;
+      background: var(--surface-alt);
+      color: var(--primary-dark);
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      border: 1px solid #d8b4fe;
+      transition: all var(--transition);
+    }
+
+    .product-link:hover {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+
+    /* 9. ACORDEÓN FAQ ACCESIBLE */
+    .faq-section {
+      background: var(--surface);
+      border-block-start: 1px solid var(--border);
+    }
+
+    .faq-list {
+      max-width: 780px;
+      margin-inline: auto;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid var(--border);
+      border-radius: 0.85rem;
+      background: var(--bg);
+      overflow: hidden;
+    }
+
+    .faq-trigger {
+      width: 100%;
+      min-height: 56px;
+      padding: 1.1rem 1.35rem;
+      background: transparent;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      text-align: left;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      cursor: pointer;
+    }
+
+    .faq-trigger:hover {
+      color: var(--primary);
+    }
+
+    .faq-icon {
+      transition: transform var(--transition);
+      flex-shrink: 0;
+      color: var(--primary);
+    }
+
+    .faq-trigger[aria-expanded="true"] .faq-icon {
+      transform: rotate(180deg);
+    }
+
+    .faq-panel {
+      padding: 0 1.35rem 1.25rem;
+      color: var(--text-body);
+      border-block-start: 1px solid var(--border);
+      padding-block-start: 1rem;
+      background: var(--surface);
+    }
+
+    /* 10. CAJA DE CONVERSIÓN RÁPIDA (COTIZADOR WHATSAPP) */
+    .conversion-box {
+      background: linear-gradient(135deg, #4c1d95, #6d28d9);
+      border-radius: 1.35rem;
+      padding: clamp(2rem, 5vw, 3.5rem);
+      color: #ffffff;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+      gap: clamp(1.75rem, 4vw, 3rem);
+      align-items: center;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .conversion-box h2 {
+      color: #ffffff;
+      margin-block-end: 0.85rem;
+    }
+
+    .conversion-box p {
+      color: #ede9fe;
+    }
+
+    .quick-form {
+      background: var(--surface);
+      color: var(--text-body);
+      padding: 1.75rem;
+      border-radius: 1rem;
+      display: grid;
+      gap: 1rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .form-group {
+      display: grid;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    .form-control {
+      min-height: 46px;
+      padding: 0.65rem 0.9rem;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      font-family: inherit;
+      font-size: 0.98rem;
+      color: var(--primary-dark);
+      background: var(--bg);
+    }
+
+    /* 11. FOOTER MINIMALISTA */
+    footer {
+      background: var(--surface);
+      border-block-start: 1px solid var(--border);
+      padding-block: 2.25rem;
+      text-align: center;
+      font-size: 0.92rem;
+      color: var(--text-body);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BARRA SUPERIOR DE CONVERSIÓN -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="#inicio" class="logo" aria-label="Guantes Express - Tu aliado en insumos médicos">
+        <!-- Logo Circular inspirado en tu marca Guantes Express -->
+        <svg width="46" height="46" viewBox="0 0 100 100" aria-hidden="true" style="flex-shrink: 0;">
+          <circle cx="50" cy="50" r="46" fill="#ffffff" stroke="#7c3aed" stroke-width="5"/>
+          <path d="M35 32 C35 20, 48 20, 48 32 C48 44, 62 44, 62 32 C62 20, 74 20, 74 32" fill="none" stroke="#3b0764" stroke-width="4.5" stroke-linecap="round"/>
+          <circle cx="35" cy="35" r="5" fill="#7c3aed"/>
+          <path d="M74 22 V36 M67 29 H81" stroke="#7c3aed" stroke-width="5" stroke-linecap="round"/>
+          <rect x="24" y="54" width="52" height="14" rx="7" fill="#7c3aed"/>
+          <text x="50" y="64" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="800" font-size="9.5" letter-spacing="1">EXPRESS</text>
+          <path d="M30 80 Q50 86 70 76" fill="none" stroke="#a855f7" stroke-width="4.5" stroke-linecap="round"/>
+        </svg>
+        <span>
+          Guantes Express
+          <span class="logo-sub">Tu aliado en insumos médicos</span>
+        </span>
+      </a>
+
+      <a href="https://wa.me/59175003785?text=Hola%20Guantes%20Express%2C%20quisiera%20consultar%20por%20sus%20ofertas%20de%20insumos%20m%C3%A9dicos." class="btn btn-accent" target="_blank" rel="noopener noreferrer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+        </svg>
+        <span>WhatsApp 75003785</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. PORTADA OFICIAL PROTAGONISTA -->
+    <section id="inicio" class="hero-cover">
+      <div class="container">
+        <div class="cover-wrapper">
+          <div class="cover-image-frame">
+            <img 
+              src="foto de portada.png" 
+              alt="Guantes Express - Tu aliado en insumos médicos. Calidad, Seguridad y Confianza. Envío a domicilio dentro del Sexto anillo. WhatsApp 75003785." 
+              class="cover-img" 
+              width="1400" 
+              height="933" 
+              fetchpriority="high" 
+              loading="eager"
+              onerror="this.style.display='none'; document.getElementById('cover-fallback').style.display='block';"
+            >
+            <div id="cover-fallback" class="cover-fallback">
+              <span class="section-tag">Calidad &bull; Seguridad &bull; Confianza</span>
+              <h2 style="font-size: clamp(1.8rem, 3vw, 2.75rem); margin-block-end: 0.5rem;">Guantes Express</h2>
+              <p style="font-weight: 700; color: var(--primary); margin-block-end: 0.75rem;">Tu aliado en insumos médicos &bull; Envío a domicilio dentro del Sexto anillo</p>
+              <p style="font-size: 0.9rem;">Guarda tu imagen de portada junto a este archivo con el nombre <strong>foto de portada.png</strong> para visualizar el banner completo.</p>
+            </div>
+          </div>
+
+          <!-- Barra de Acción Inmediata bajo la Portada -->
+          <div class="cover-action-bar">
+            <div class="cover-copy">
+              <h1>Calidad, Seguridad y Confianza en cada insumo</h1>
+              <p>Envío a domicilio dentro del Sexto anillo en Santa Cruz &bull; ¡Consulta por nuestras ofertas!</p>
+            </div>
+            <div class="cover-buttons">
+              <a href="https://wa.me/59175003785?text=Hola%20Guantes%20Express%2C%20quisiera%20consultar%20por%20sus%20ofertas%20y%20hacer%20un%20pedido." class="btn btn-accent" target="_blank" rel="noopener noreferrer">
+                Consultar Ofertas Ahora
+              </a>
+              <a href="#catalogo" class="btn btn-primary">Ver Catálogo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. BARRA DE VALIDACIÓN Y BENEFICIOS -->
+    <section class="trust-bar" aria-label="Ventajas de Guantes Express">
+      <div class="container trust-grid">
+        <div class="trust-item">
+          <div class="trust-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <rect x="1" y="3" width="15" height="13"></rect>
+              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+              <circle cx="5.5" cy="18.5" r="2.5"></circle>
+              <circle cx="18.5" cy="18.5" r="2.5"></circle>
+            </svg>
+          </div>
+          <span>Envío a domicilio dentro del Sexto anillo</span>
+        </div>
+
+        <div class="trust-item">
+          <div class="trust-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <span>Calidad, Seguridad y Confianza garantizada</span>
+        </div>
+
+        <div class="trust-item">
+          <div class="trust-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+              <line x1="9" y1="9" x2="9.01" y2="9"></line>
+              <line x1="15" y1="9" x2="15.01" y2="9"></line>
+            </svg>
+          </div>
+          <span>6 colores en guantes de nitrilo y látex</span>
+        </div>
+
+        <div class="trust-item">
+          <div class="trust-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </div>
+          <span>Atención y ofertas al 75003785</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. MATRIZ DE PRODUCTOS DE ALTA CONVERSIÓN -->
+    <section id="catalogo">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Tu Aliado en Insumos Médicos</span>
+          <h2>Productos disponibles para envío inmediato</h2>
+          <p>Selecciona el insumo o color de guante de nitrilo que necesitas para consultar ofertas y coordinar tu entrega dentro del Sexto anillo.</p>
+        </div>
+
+        <div class="products-grid">
+          <!-- Producto 1: Guantes de Nitrilo con Selector de Color -->
+          <div class="card-container">
+            <article class="product-card">
+              <div>
+                <div class="product-header">
+                  <div class="product-icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                      <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path>
+                      <path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"></path>
+                      <path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"></path>
+                      <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"></path>
+                    </svg>
+                  </div>
+                  <span class="badge-stock">6 Colores en Stock</span>
+                </div>
+                <h3>Guantes de Nitrilo</h3>
+                <p>Libres de látex, máxima sensibilidad táctil y resistencia superior. Ideales para odontología, medicina, estética y uso profesional.</p>
+
+                <div class="swatch-group">
+                  <span class="swatch-label" id="selected-color-label">Color seleccionado: Blanco</span>
+                  <div class="swatches" role="group" aria-label="Seleccionar color de guantes de nitrilo">
+                    <button type="button" class="swatch-btn selected" data-color="Blanco">
+                      <span class="color-dot" style="background-color: #ffffff;"></span> Blanco
+                    </button>
+                    <button type="button" class="swatch-btn" data-color="Azul">
+                      <span class="color-dot" style="background-color: #1d4ed8;"></span> Azul
+                    </button>
+                    <button type="button" class="swatch-btn" data-color="Celeste">
+                      <span class="color-dot" style="background-color: #38bdf8;"></span> Celeste
+                    </button>
+                    <button type="button" class="swatch-btn" data-color="Negro">
+                      <span class="color-dot" style="background-color: #18181b;"></span> Negro
+                    </button>
+                    <button type="button" class="swatch-btn" data-color="Fucsia">
+                      <span class="color-dot" style="background-color: #d946ef;"></span> Fucsia
+                    </button>
+                    <button type="button" class="swatch-btn" data-color="Rosado">
+                      <span class="color-dot" style="background-color: #f472b6;"></span> Rosado
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <a id="nitrilo-cta" href="https://wa.me/59175003785?text=Hola%20Guantes%20Express%2C%20quisiera%20cotizar%20Guantes%20de%20Nitrilo%20color%20Blanco." class="product-link" target="_blank" rel="noopener noreferrer">
+                Cotizar Nitrilo (Blanco)
+              </a>
+            </article>
+          </div>
+
+          <!-- Producto 2: Guantes de Látex -->
+          <div class="card-container">
+            <article class="product-card">
+              <div>
+                <div class="product-header">
+                  <div class="product-icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                  </div>
+                  <span class="badge-stock">Disponible</span>
+                </div>
+                <h3>Guantes de Látex</h3>
+                <p>Ajuste anatómico, alta elasticidad y comodidad prolongada para procedimientos clínicos, curaciones y atención general.</p>
+              </div>
+              <a href="https://wa.me/59175003785?text=Hola%20Guantes%20Express%2C%20quisiera%20cotizar%20Guantes%20de%20L%C3%A1tex." class="product-link" target="_blank" rel="noopener noreferrer">
+                Cotizar Guantes de Látex
+              </a>
+            </article>
+          </div>
+
+          <!-- Producto 3: Barbijos -->
+          <div class="card-container">
+            <article class="product-card">
+              <div>
+                <div class="product-header">
+                  <div class="product-icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                      <path d="M4 10a8 8 0 0 1 16 0v4a8 8 0 0 1-16 0v-4z"></path>
+                      <path d="M2 10h2M20 10h2M2 14h2M20 14h2"></path>
+                    </svg>
+                  </div>
+                  <span class="badge-stock">Bioseguridad</span>
+                </div>
+                <h3>Barbijos Quirúrgicos</h3>
+                <p>Barbijos tricapa descartables con ajuste nasal anatómico y elásticos suaves de alta filtración bacteriana para uso diario.</p>
+              </div>
+              <a href="https://wa.me/59175003785?text=Hola%20Guantes%20Express%2C%20quisiera%20cotizar%20Barbijos." class="product-link" target="_blank" rel="noopener noreferrer">
+                Cotizar Barbijos
+              </a>
+            </article>
+          </div>
+
+          <!-- Producto 4: Gorros Quirúrgicos -->
+          <div class="card-container">
+            <article class="product-card">
+              <div>
+                <div class="product-header">
+                  <div class="product-icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                      <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path>
+                      <line x1="4" y1="22" x2="4" y2="15"></line>
+                    </svg>
+                  </div>
+                  <span class="badge-stock">Bioseguridad</span>
+                </div>
+                <h3>Gorros Quirúrgicos</h3>
+                <p>Gorros descartables ligeros, respirables y con ajuste elástico cómodo para mantener la esterilidad en quirófano o consultorio.</p>
+              </div>
+              <a href="https://wa.me/59175003785?text=Hola%20Guantes%20Express%2C%20quisiera%20cotizar%20Gorros%20Quir%C3%BArgicos." class="product-link" target="_blank" rel="noopener noreferrer">
+                Cotizar Gorros Quirúrgicos
+              </a>
+            </article>
+          </div>
+
+          <!-- Producto 5: Cubrecalzados -->
+          <div class="card-container">
+            <article class="product-card">
+              <div>
+                <div class="product-header">
+                  <div class="product-icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                      <path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0l1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"></path>
+                    </svg>
+                  </div>
+                  <span class="badge-stock">Bioseguridad</span>
+                </div>
+                <h3>Cubrecalzados</h3>
+                <p>Botas cubrecalzados descartables resistentes con elástico reforzado para evitar la contaminación cruzada en áreas limpias.</p>
+              </div>
+              <a href="https://wa.me/59175003785?text=Hola%20Guantes%20Express%2C%20quisiera%20cotizar%20Cubrecalzados." class="product-link" target="_blank" rel="noopener noreferrer">
+                Cotizar Cubrecalzados
+              </a>
+            </article>
+          </div>
+
+          <!-- Producto 6: Jeringas -->
+          <div class="card-container">
+            <article class="product-card">
+              <div>
+                <div class="product-header">
+                  <div class="product-icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                      <path d="M18 2l4 4"></path>
+                      <path d="M17 7l3-3"></path>
+                      <path d="M19 9L8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"></path>
+                      <path d="M9 11l4 4"></path>
+                      <path d="M5 19l-3 3"></path>
+                      <path d="M14 4l6 6"></path>
+                    </svg>
+                  </div>
+                  <span class="badge-stock">Disponible</span>
+                </div>
+                <h3>Jeringas</h3>
+                <p>Jeringas estériles descartables con escala nítida de dosificación y émbolo de deslizamiento suave para uso médico y estético.</p>
+              </div>
+              <a href="https://wa.me/59175003785?text=Hola%20Guantes%20Express%2C%20quisiera%20cotizar%20Jeringas." class="product-link" target="_blank" rel="noopener noreferrer">
+                Cotizar Jeringas
+              </a>
+            </article>
+          </div>
+
+          <!-- Producto 7: Campos Dentales -->
+          <div class="card-container">
+            <article class="product-card">
+              <div>
+                <div class="product-header">
+                  <div class="product-icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                      <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                      <line x1="3" y1="9" x2="21" y2="9"></line>
+                    </svg>
+                  </div>
+                  <span class="badge-stock">Uso Odontológico</span>
+                </div>
+                <h3>Campos Dentales</h3>
+                <p>Campos descartables absorbentes con respaldo impermeable para máxima higiene y protección del paciente en consulta odontológica.</p>
+              </div>
+              <a href="https://wa.me/59175003785?text=Hola%20Guantes%20Express%2C%20quisiera%20cotizar%20Campos%20Dentales." class="product-link" target="_blank" rel="noopener noreferrer">
+                Cotizar Campos Dentales
+              </a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. ACORDEÓN DE PREGUNTAS FRECUENTES (FAQ ACCESIBLE) -->
+    <section class="faq-section" id="preguntas-frecuentes">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Información de Compra</span>
+          <h2>Preguntas Frecuentes</h2>
+          <p>Resolvemos tus dudas sobre envíos a domicilio, colores disponibles y ofertas en Santa Cruz.</p>
+        </div>
+
+        <div class="faq-list" id="faq-accordion">
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="true" aria-controls="faq-panel-1">
+              <span>¿Cuál es la cobertura de envío a domicilio en Santa Cruz?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-panel" id="faq-panel-1">
+              Realizamos <strong>envío a domicilio dentro del Sexto anillo</strong> en Santa Cruz de la Sierra. Solo envíanos tu ubicación y pedido por WhatsApp al <strong>75003785</strong> para coordinar tu entrega rápida.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-2">
+              <span>¿Qué colores de guantes de nitrilo tienen disponibles?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-panel" id="faq-panel-2" hidden>
+              Contamos con guantes de nitrilo en seis colores: <strong>blanco, azul, celeste, negro, fucsia y rosado</strong>, además de guantes de látex.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-3">
+              <span>¿Puedo consultar por ofertas al pedir varios insumos juntos?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-panel" id="faq-panel-3" hidden>
+              Sí, puedes armar un pedido combinado de guantes, barbijos, gorros, cubrecalzados, jeringas y campos dentales y consultar por nuestras ofertas vigentes directamente al WhatsApp <strong>75003785</strong>.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. CAJA DE CONVERSIÓN RÁPIDA (GENERADOR DE COTIZACIÓN WHATSAPP) -->
+    <section id="cotizar">
+      <div class="container">
+        <div class="conversion-box">
+          <div>
+            <h2>¡Consulta por nuestras ofertas!</h2>
+            <p style="margin-block-end: 1.25rem;">
+              Selecciona el insumo que necesitas y envíanos tu consulta en un clic. Coordinamos tu envío a domicilio dentro del Sexto anillo.
+            </p>
+            <p style="font-weight: 700; color: #ffffff;">
+              WhatsApp: 75003785 &bull; Santa Cruz, Bolivia
+            </p>
+          </div>
+
+          <form class="quick-form" id="quote-form">
+            <div class="form-group">
+              <label for="product-select">Producto de interés</label>
+              <select id="product-select" class="form-control">
+                <option value="Guantes de Nitrilo (Blanco)">Guantes de Nitrilo - Blanco</option>
+                <option value="Guantes de Nitrilo (Azul)">Guantes de Nitrilo - Azul</option>
+                <option value="Guantes de Nitrilo (Celeste)">Guantes de Nitrilo - Celeste</option>
+                <option value="Guantes de Nitrilo (Negro)">Guantes de Nitrilo - Negro</option>
+                <option value="Guantes de Nitrilo (Fucsia)">Guantes de Nitrilo - Fucsia</option>
+                <option value="Guantes de Nitrilo (Rosado)">Guantes de Nitrilo - Rosado</option>
+                <option value="Guantes de Látex">Guantes de Látex</option>
+                <option value="Barbijos">Barbijos</option>
+                <option value="Gorros Quirúrgicos">Gorros Quirúrgicos</option>
+                <option value="Cubrecalzados">Cubrecalzados</option>
+                <option value="Jeringas">Jeringas</option>
+                <option value="Campos Dentales">Campos Dentales</option>
+                <option value="Combo surtido de insumos">Combo surtido de insumos</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="quantity-input">Cantidad o dirección dentro del Sexto anillo (opcional)</label>
+              <input type="text" id="quantity-input" class="form-control" placeholder="Ej. 5 cajas talla M, entrega en 3er anillo...">
+            </div>
+
+            <button type="submit" class="btn btn-accent" style="width: 100%;">
+              Consultar Ofertas por WhatsApp
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER MINIMALISTA -->
+  <footer>
+    <div class="container">
+      <p><strong>Guantes Express</strong> &mdash; Tu aliado en insumos médicos (Calidad &bull; Seguridad &bull; Confianza)</p>
+      <p style="margin-block-start: 0.35rem;">Envío a domicilio dentro del Sexto anillo &bull; Santa Cruz, Bolivia &bull; WhatsApp: 75003785</p>
+    </div>
+  </footer>
+
+  <script>
+    /* LÓGICA JAVASCRIPT VANILLA Y SEGURA CONTRA DOM-XSS */
+    document.addEventListener('DOMContentLoaded', () => {
+      const WHATSAPP_NUMBER = '59175003785';
+
+      // 1. Selector interactivo de colores para Guantes de Nitrilo
+      const swatchContainer = document.querySelector('.swatches');
+      const colorLabel = document.getElementById('selected-color-label');
+      const nitriloCta = document.getElementById('nitrilo-cta');
+
+      if (swatchContainer && colorLabel && nitriloCta) {
+        swatchContainer.addEventListener('click', (event) => {
+          const btn = event.target.closest('.swatch-btn');
+          if (!btn) return;
+
+          swatchContainer.querySelectorAll('.swatch-btn').forEach((b) => b.classList.remove('selected'));
+          btn.classList.add('selected');
+
+          const color = btn.getAttribute('data-color') || 'Blanco';
+          colorLabel.textContent = 'Color seleccionado: ' + color;
+          nitriloCta.textContent = 'Cotizar Nitrilo (' + color + ')';
+
+          const message = 'Hola Guantes Express, quisiera cotizar Guantes de Nitrilo color ' + color + '.';
+          nitriloCta.setAttribute('href', 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(message));
+        });
+      }
+
+      // 2. Acordeón FAQ accesible mediante delegación de eventos
+      const faqAccordion = document.getElementById('faq-accordion');
+      if (faqAccordion) {
+        faqAccordion.addEventListener('click', (event) => {
+          const trigger = event.target.closest('.faq-trigger');
+          if (!trigger) return;
+
+          const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+          const panelId = trigger.getAttribute('aria-controls');
+          const panel = document.getElementById(panelId);
+
+          trigger.setAttribute('aria-expanded', String(!isExpanded));
+          if (panel) {
+            if (isExpanded) {
+              panel.setAttribute('hidden', '');
+            } else {
+              panel.removeAttribute('hidden');
+            }
+          }
+        });
+      }
+
+      // 3. Despacho seguro del formulario de cotización hacia WhatsApp
+      const quoteForm = document.getElementById('quote-form');
+      const productSelect = document.getElementById('product-select');
+      const quantityInput = document.getElementById('quantity-input');
+
+      if (quoteForm && productSelect && quantityInput) {
+        quoteForm.addEventListener('submit', (event) => {
+          event.preventDefault();
+
+          const selectedProduct = productSelect.value.trim();
+          const detail = quantityInput.value.trim();
+
+          let message = 'Hola Guantes Express, quisiera consultar ofertas y cotizar:\n- Producto: ' + selectedProduct;
+          if (detail) {
+            message += '\n- Detalle / Entrega: ' + detail;
+          }
+
+          const waUrl = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(message);
+          window.open(waUrl, '_blank', 'noopener,noreferrer');
+        });
+      }
+    });
+  </script>
+</body>
+</html>
